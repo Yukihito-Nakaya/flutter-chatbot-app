@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'screens/chat_screen.dart';
 
 void main() {
   runApp(const ChatbotApp());
 }
 
 class ChatbotApp extends StatelessWidget {
-  const MyApp({super.key});
+  const ChatbotApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

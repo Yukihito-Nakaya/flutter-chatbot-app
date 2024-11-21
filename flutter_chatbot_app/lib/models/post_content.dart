@@ -3,7 +3,7 @@ class Message {
     final bool questionnaire;
 
     Message({
-        this.message,
-        this.questionnaire
+        required this.message,
+        required this.questionnaire
     });
 }
