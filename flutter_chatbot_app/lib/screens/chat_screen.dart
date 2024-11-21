@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import '../models/post_content.dart';
 
@@ -63,20 +64,50 @@ class _ChatbotScreenState extends State<ChatbotScreen>{
                             itemCount: _messages.length,
                             itemBuilder: (BuildContext context, int index){
                                 final Message message = _messages[index];
-                                return Container(
-                                    alignment: message.questionnaire ? Alignment.centerRight : Alignment.centerLeft,
-                                    child: Text(message.message),
+                                return Align(
+                                    alignment: message.questionnaire ? Alignment.centerLeft: Alignment.centerRight,
+                                    child: Container(
+                                        margin:EdgeInsets.symmetric(vertical:4,horizontal: 8),
+                                        padding: const EdgeInsets.all(10),
+                                        decoration: BoxDecoration(
+                                            color: message.questionnaire ? Colors.blue : Colors.grey,
+                                            borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: Text(message.message),
+                                    ),
                                 );
                             },
                         ),
                     ),
-                    TextField(
-                        controller: _controller,
-                        onSubmitted: _sendMessage,
-                        decoration: const InputDecoration(
-                            hintText: 'Enter your message',
+                    // TextField(
+                    //     controller: _controller,
+                    //     onSubmitted: _sendMessage,
+                    //     decoration: const InputDecoration(
+                    //         hintText: 'Enter your message',
+                    //     ),
+                    // ),
+                    Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                            children: [
+                                Expanded(
+                                    child: TextField(
+                                        controller: _controller,
+                                        maxLines: null,
+                                        decoration: const InputDecoration(
+                                            hintText: 'メッセージを入力してください',
+                                        ),
+                                    ),
+                                ),
+                                IconButton(
+                                    icon: const Icon(Icons.send),
+                                    onPressed: (){
+                                        _sendMessage(_controller.text);
+                                    },
+                                ),
+                            ],
                         ),
-                    ),
+                        ),
                 ],
             ),
         );
