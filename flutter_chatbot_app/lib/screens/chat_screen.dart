@@ -79,13 +79,6 @@ class _ChatbotScreenState extends State<ChatbotScreen>{
                             },
                         ),
                     ),
-                    // TextField(
-                    //     controller: _controller,
-                    //     onSubmitted: _sendMessage,
-                    //     decoration: const InputDecoration(
-                    //         hintText: 'Enter your message',
-                    //     ),
-                    // ),
                     Padding(
                         padding: const EdgeInsets.all(8),
                         child: Row(
