@@ -6,8 +6,8 @@ Problem 2 Flutter chatbot application
     ・Flutter 3.19.6 
     ・Dart 3.3.4
 ### 追加 Dart package
-    ・http 1.2.2
-    ・ provider 6.1.2
+    ・http 1.2.2　　　　APIリクエスト
+    ・provider 6.1.2　 状態管理
 # 利用方法
 
 # 問題内容
