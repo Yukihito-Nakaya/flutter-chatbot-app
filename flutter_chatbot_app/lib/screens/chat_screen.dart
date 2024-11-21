@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'questionnaire.dart';
 import '../models/post_content.dart';
 
 class ChatbotScreen extends StatefulWidget {
@@ -39,17 +40,24 @@ class _ChatbotScreenState extends State<ChatbotScreen>{
             _lastBotResponse = response;
         });
 
-        //アンケート表示呼び出し
+        _showQuestionnaire();
     }
 
-    //アンケート表示
-    //API機能追加
-    // void _showQuestionnaire(){
-    //     showModalBottomSheet(
-    //         context: context,
-    //         builder: builder
-    //     );
-    // }
+        //アンケート表示
+    void _showQuestionnaire(){
+        showModalBottomSheet(
+            context: context,
+            builder: (BuildContext context){
+                return QuestionnaireScreen(
+                    onSubmit: (String feedback){
+                        //アンケート結果を保存
+                        //API機能追加
+                    },
+                );
+            },
+        );
+    }
+
 
     @override
     Widget build(BuildContext context){
