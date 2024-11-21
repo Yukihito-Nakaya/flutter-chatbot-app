@@ -9,6 +9,7 @@ Problem 2 Flutter chatbot application
     ・http 1.2.2　　　　APIリクエスト
     ・provider 6.1.2　 状態管理
 # 利用方法
+    ・flutter run -d chrome
 
 # 問題内容
 ## 【前提】
